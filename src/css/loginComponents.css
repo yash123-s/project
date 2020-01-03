@@ -1,0 +1,53 @@
+.body{
+    background-image: url(../images/background.jpg);
+}
+  /* h1 {
+    text-align: center;
+  } */
+  
+  .loginform {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 800px;
+  }
+  
+  .loginlabel,
+  .logininput {
+    display: block;
+    width: 50%;
+  }
+  
+  .loginlabel {
+    margin-bottom: 5px;
+    height: 22px;
+  }
+  
+  .logininput {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #777;
+  }
+  
+  
+  .input-feedback {
+    color: rgb(235, 54, 54);
+    margin-top: -15px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .loginbutton {
+    padding: 10px 15px;
+    background-color: rgb(70, 153, 179);
+    color: white;
+    border: 1px solid rgb(70, 153, 179);
+    background-color: 250ms;
+  }
+  
+  .loginbutton:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(70, 153, 179);
+  }
