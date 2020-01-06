@@ -1,6 +1,6 @@
 .background {   
     background-image: url(../images/donate.jpg);
-    height:500px;
+    height:400px;
     background-repeat: no-repeat;
     margin-left: 200px;
     margin-top: 60px;
@@ -9,4 +9,28 @@
     color:#f70000;
     font-size: 60px;
     margin-left: -400px;
+}
+.hide{
+    color: white;
+    width: 1000px;
+}
+.readmore{
+    margin-left: -600px;
+    /* margin-bottom: -500px; */
+}
+.para{
+    background-image: url(../images/vibgyor.png);
+    width: 850px;
+    height: 100px;
+    background-size: cover;
+    margin-left: 50px;
+    margin-top: 150px;
+    padding-top: 20px;
+}
+.donatenow{
+    margin-left: 400px;
+    background: white;
+    border-radius: 20px;
+    border-color: white;
+    margin-top: -100px;
 }

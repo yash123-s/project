@@ -4,7 +4,7 @@ import '../css/loginComponents.css';
 import { Formik } from "formik";
 // import * as EmailValidator from "email-validator";
 
-const loginComponents = () => (
+const LoginComponents = () => (
   
   <Formik
     initialValues={{ Phone: "", password: "" }}
@@ -61,8 +61,10 @@ const loginComponents = () => (
         handleSubmit
       } = props;
       return (
-        <div className="body">
-        <form className="loginform" onSubmit={handleSubmit}>
+        <div className="row body">
+          <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+          <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">   
+          <form className="lform" onSubmit={handleSubmit}>
           <label className="loginlabel" htmlFor="email">Phone Number</label>
           <input
             name="Phone"
@@ -94,6 +96,21 @@ const loginComponents = () => (
             Login
           </button>
         </form>
+        <div className="forgot">
+          <div>or sign in with
+          <i class="fa fa-facebook-f"></i>
+            <i class="fa fa-whatsapp"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus"></i>
+          </div>
+          <div></div>
+          <div></div>
+          <div>forgot password?</div>
+        </div>
+        </div>
+        <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+
+     
         </div>
       );
      
@@ -103,4 +120,4 @@ const loginComponents = () => (
 
 
 
-export default loginComponents;
+export default LoginComponents;

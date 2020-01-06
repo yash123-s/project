@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/nav.css';
 // import image from '../images/logo.png'
 
-class navComponents extends Component {
+class NavComponents extends Component {
   render() {
     return (
       <div>        
@@ -15,7 +15,7 @@ class navComponents extends Component {
             <button className="dropbtn">Donate Options </button>
             <div className="dropdown-content">
               <a href="#">Children Eduaction</a>
-              <a href="#">Flood Doantion</a>
+              <a href="#">Flood Donation</a>
               <a href="#">Orphanage</a>
             </div>
           </div> 
@@ -25,4 +25,4 @@ class navComponents extends Component {
     );
   }
 }
-export default navComponents;
+export default NavComponents;

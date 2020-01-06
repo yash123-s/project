@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../css/register.css'
+import '../css/register.css';
+// import NavComponents from './NavComponents';
 
-class registerComponents extends Component {
+class RegisterComponents extends Component {
     constructor() {
         super();
         this.state = {
@@ -32,6 +33,7 @@ class registerComponents extends Component {
             fields["emailid"] = "";
             fields["mobileno"] = "";
             fields["password"] = "";
+            fields["Address"] = "";
             this.setState({fields:fields});
             alert("Form submitted");
         }
@@ -105,22 +107,29 @@ class registerComponents extends Component {
             errors["password"] = "*Please enter secure and strong password.";
           }
         }
+        
+        if (!fields["Address"]) {
+          formIsValid = false;
+          errors["Address"] = "*Please enter your Address.";
+        }
   
         this.setState({
           errors: errors
         });
         return formIsValid;
-  
-  
+
       }
   
   
   
     render() {
       return (
-      <div >
+      <div>
+        {/* <div>
+          <NavComponents />
+        </div> */}
+        <div className="body">
        <div className="register">
-          <h3>Registration page</h3>
           <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
          
           <label className="labelform">First Name</label>
@@ -147,19 +156,31 @@ class registerComponents extends Component {
           
           <form className="genderdiv">
             <label className="labelgender">Gender</label>
-            <input className="genderinput" type="radio" value="Male"/>Male
-            <input type="radio" value="Female"/>Female
+            <input  className="genderinput" type="radio" name="gender" value="male"/> Male<br/>
+            <input  className="genderinputf" type="radio" name="gender" value="female"/> Female
           </form><br></br>
 
           <div>
-            <label  className="labelform">Address</label>
-            <textarea className="textfield"></textarea>
+            <label className="labelform">Address</label>
+            <textarea className="textfield" name="Address" value={this.state.fields.Address} onChange={this.handleChange}></textarea>
+            <div className="errorMsg">{this.state.errors.Address}</div>
           </div>
+         
+          <div className="nation">
+          <label className="Country">Nation</label>
+            <select className="India" >
+              <option value="India">India</option>
+              <option value="U.S.A">U.S.A</option>
+              <option value="China">China</option>
+              <option value="U.K.">U.K.</option>
+            </select>
+          </div>
+
           <input type="submit" className="buttonregister"  value="Register"/>
           </form>
       </div>
   </div>
-  
+  </div>
         );
     }
   
@@ -167,4 +188,4 @@ class registerComponents extends Component {
   }
   
 
-export default registerComponents;
+export default RegisterComponents;
