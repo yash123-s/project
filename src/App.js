@@ -7,7 +7,7 @@ import footerComponents from "./Components/footerComponents";
 import homeComponents from './Components/homeComponents';
 // import LoginComponents from './Components/LoginComponents';
 // import DynamicWishes from './Components/DynamicWishes';
-// import RegisterComponents from './Components/RegisterComponents';
+import RegisterComponents from './Components/RegisterComponents';
 // import FrontPage from './Components/FrontPage';
 import Firstpage from './Components/Firstpage';
 import RegisterPage from './Components/RegisterPage';
@@ -25,7 +25,7 @@ function App() {
          <Route exact path='/home' component={homeComponents}></Route>
          {/* <Route exact path='/login' component={loginComponents}></Route> */}
          {/* <Route exact path='/wish' component={DynamicWishes}></Route> */}
-         {/* <Route exact path='/register' component={RegisterComponents}></Route> */}
+         <Route exact path='/register' component={RegisterComponents}></Route>
          {/* <Route exact path='/front' component={frontpage}></Route> */}
          <Route exact path='/first' component={Firstpage}></Route>
          <Route exact path='/slider' component={SliderPage}></Route>

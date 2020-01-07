@@ -45,7 +45,7 @@ class ProjectPage extends Component {
                         </Card>
                       </div>
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' ,height:'25rem' }}>
                             <Card.Img variant="top" src={physical}/>
                             <Card.Body>
                                 <Card.Title>Physically challenged/mentally retarded</Card.Title>
@@ -57,8 +57,8 @@ class ProjectPage extends Component {
                         </Card>
                       </div>
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={orphan}/>
+                        <Card style={{ width: '18rem' ,height:'25rem'}}>
+                            <Card.Img  variant="top" src={orphan} onmouseover={orphan} />
                             <Card.Body>
                                 <Card.Title>Old Age Orphans</Card.Title>
                                 <Card.Text>
@@ -68,7 +68,7 @@ class ProjectPage extends Component {
                             </Card.Body>
                         </Card>
                       </div>
-                      <Card style={{ width: '18rem' ,height:'20rem' }}>
+                      <Card style={{ width: '18rem' ,height:'25rem' }}>
                             <Card.Img variant="top" src={children}/>
                             <Card.Body>
                                 <Card.Title>Orphans</Card.Title>
