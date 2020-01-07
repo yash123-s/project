@@ -1,7 +1,7 @@
 .body{
-  background-image: url(../images/background.jpg);
-    height: 620px;
-    padding: 100px;
+  /* background-image: url(../images/background.jpg); */
+  height: 620px;
+  padding: 100px;
 }
 .register, .loginform {
   width: 400px;

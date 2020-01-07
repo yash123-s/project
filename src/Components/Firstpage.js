@@ -9,11 +9,11 @@ class Firstpage extends Component {
             <div>
                <NavComponents/>
            
-            <div className="row">
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div className="row col">
+                <div className="col col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <FrontPage />
                 </div>
-                <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8"> 
+                <div className="col col-xs-8 col-sm-8 col-md-8 col-lg-8"> 
                     <LoginComponents />
                 </div>       
             </div>

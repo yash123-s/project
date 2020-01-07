@@ -12,6 +12,7 @@ import homeComponents from './Components/homeComponents';
 import Firstpage from './Components/Firstpage';
 import RegisterPage from './Components/RegisterPage';
 import SliderPage from './Components/SliderPage';
+import ProjectPage from './Components/ProjectPage';
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
          <Route exact path='/first' component={Firstpage}></Route>
          <Route exact path='/slider' component={SliderPage}></Route>
          <Route exact path='/second' component={RegisterPage}></Route>
+         <Route exact path='/Project' component={ProjectPage}></Route>
+
 
 
        </switch> 

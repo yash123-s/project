@@ -1,7 +1,10 @@
 .body{
-    background-image: url(../images/background.jpg);
+    background-color: rgb(230, 165, 165);
     height: 620px;
     padding: 100px;
+}
+.background{
+  background: rgba(241, 240, 240, 0.521);
 }
 .lform{
   background: transparent;
