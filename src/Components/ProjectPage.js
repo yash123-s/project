@@ -8,6 +8,18 @@ import children from '../images/children.jpg'
 
 
 class ProjectPage extends Component {
+    constructor(){
+        super()
+          this.state={
+            showMe:false
+          }
+        }
+      Operation()
+    {
+      this.setState({
+    showMe:!this.state.showMe
+      })
+    }
     render() {
         return (
             <div className="projectbg">
@@ -28,8 +40,8 @@ class ProjectPage extends Component {
                     
                       <h2>Projects are mentioned below.</h2>
                     <div className="row">
-                      <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card style={{ width: '18rem',height:'25rem' }}>
+                      <div className=" col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <Card className=" mainheight li" >
                             <Card.Img variant="top" src={flood} />
                             <Card.Body>
                                 <Card.Title>Flood</Card.Title>
@@ -38,14 +50,21 @@ class ProjectPage extends Component {
                                 <div> >water facility</div>
                                 <div> >Donate bedsheets</div>
                                 <div> >pillows</div>
-                                <div></div>
                                 </Card.Text>
                                 {/* <Button variant="primary">Go somewhere</Button> */}
+                                <div>
+                                {
+          this.state.showMe?
+          <div className="hide">Experience More Pleasure,We don’t live in a perfect world, and there’s never going to be a perfect time to give—but there are always people out there in need of help. Whether interest rates are rising, the economy is in the doldrums, or even if you’re experiencing financial difficulties of your own, the reality is that when you donate your money, you help others who need it.</div>
+          :null
+        }
+        <button className="readmore" onClick={()=>this.Operation()}>Read more</button>
+                                </div>
                             </Card.Body>
                         </Card>
                       </div>
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card style={{ width: '18rem' ,height:'25rem' }}>
+                        <Card className="mainheight li" >
                             <Card.Img variant="top" src={physical}/>
                             <Card.Body>
                                 <Card.Title>Physically challenged/mentally retarded</Card.Title>
@@ -57,7 +76,7 @@ class ProjectPage extends Component {
                         </Card>
                       </div>
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card style={{ width: '18rem' ,height:'25rem'}}>
+                        <Card className="mainheight li" >
                             <Card.Img  variant="top" src={orphan} onmouseover={orphan} />
                             <Card.Body>
                                 <Card.Title>Old Age Orphans</Card.Title>
@@ -68,13 +87,14 @@ class ProjectPage extends Component {
                             </Card.Body>
                         </Card>
                       </div>
-                      <Card style={{ width: '18rem' ,height:'25rem' }}>
+                      <Card className=" mainheight li" >
                             <Card.Img variant="top" src={children}/>
                             <Card.Body>
                                 <Card.Title>Orphans</Card.Title>
                                 <Card.Text>
                                 Education/Schooling, food, shelter
                                 </Card.Text>
+                                
                                 {/* <Button variant="primary">Go somewhere</Button> */}
                             </Card.Body>
                         </Card>

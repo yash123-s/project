@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavComponents from "./Components/NavComponents";
 import footerComponents from "./Components/footerComponents";
 import homeComponents from './Components/homeComponents';
-// import LoginComponents from './Components/LoginComponents';
+import LoginComponents from './Components/LoginComponents';
 // import DynamicWishes from './Components/DynamicWishes';
 import RegisterComponents from './Components/RegisterComponents';
 // import FrontPage from './Components/FrontPage';
@@ -13,6 +13,7 @@ import Firstpage from './Components/Firstpage';
 import RegisterPage from './Components/RegisterPage';
 import SliderPage from './Components/SliderPage';
 import ProjectPage from './Components/ProjectPage';
+import About from './Components/About';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
          <Route exact path='/' component={NavComponents}></Route>
          <Route exact path='/footer' component={footerComponents}></Route>
          <Route exact path='/home' component={homeComponents}></Route>
-         {/* <Route exact path='/login' component={loginComponents}></Route> */}
+         <Route exact path='/login' component={LoginComponents}></Route>
          {/* <Route exact path='/wish' component={DynamicWishes}></Route> */}
          <Route exact path='/register' component={RegisterComponents}></Route>
          {/* <Route exact path='/front' component={frontpage}></Route> */}
@@ -31,6 +32,8 @@ function App() {
          <Route exact path='/slider' component={SliderPage}></Route>
          <Route exact path='/second' component={RegisterPage}></Route>
          <Route exact path='/Project' component={ProjectPage}></Route>
+         <Route exact path='/about' component={About}></Route>
+
 
 
 

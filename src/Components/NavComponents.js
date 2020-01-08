@@ -11,14 +11,8 @@ class NavComponents extends Component {
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
           <a href="#about">About</a>
-          <div className="dropdown">
-            <button className="dropbtn">Donate Options </button>
-            <div className="dropdown-content">
-              <a href="#">Children Eduaction</a>
-              <a href="#">Flood Donation</a>
-              <a href="#">Orphanage</a>
-            </div>
-          </div> 
+          <a href="#">Donate Options </a>
+            
           <button className="logOut"><a href="/" >LogOut</a></button>
         </div>
       </div>

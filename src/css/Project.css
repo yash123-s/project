@@ -1,7 +1,17 @@
 .projectbg{
     background-image: url(../images/projectbg.jpg);
-    height: 1000px;
+    height: 900px;
 }
 .card-img, .card-img-top {
     height: 189px;
+}
+.mainheight{
+    width: 18rem;
+    height: 22rem;
+}
+.li:hover{
+    width:20rem;
+    height:25rem;
+    background-color:rgba(255, 183, 0, 0.541); 
+    z-index: 2;
 }
