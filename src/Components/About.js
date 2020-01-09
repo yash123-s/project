@@ -6,6 +6,7 @@ import volunteer2 from '../images/v2.jpeg';
 import volunteer3 from '../images/v3.jpeg';
 import volunteer4 from '../images/v4.jpg';
 import NavComponents from './NavComponents';
+import FooterComponents from '../Components/FooterComponents'
 
 class About extends Component {
     render() {
@@ -54,31 +55,40 @@ class About extends Component {
                     <div className=" img__wrap col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <img className="img__img helping" src={volunteer1} />
                       <p class="img__description">
-                        ASHOK KUMAR
+                        <p className="vname">ASHOK KUMAR</p>
+                        <p>Contact:9363544332</p>
+                        <p>Mysuru</p>
                       </p> 
                     </div>
                     <div className=" img__wrap col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <img className="img__img helping" src={volunteer2} />
                       <p class="img__description">
-                        DIVYA SHREE
+                        <p className="vname">DIVYA SHREE</p>
+                        <p>Contact:9866244332</p>
+                        <p>Bangalore</p>
                       </p> 
                     </div>
                     <div className=" img__wrap col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <img className="img__img helping" src={volunteer3} />
                       <p class="img__description">
-                        HARSHITHA
+                        <p className="vname">HARSHITHA</p>
+                        <p>Contact:998424332</p>
+                        <p>Mandya</p>
                       </p> 
                     </div>
                     <div className=" img__wrap col-xs-3 col-sm-3 col-md-3 col-lg-3">
                       <img className="img__img helping" src={volunteer4} />
                       <p class="img__description">
-                        BALAJI
+                        <p className="vname">BALAJI</p>
+                        <p>Contact:9926244332</p>
+                        <p>Hospete</p>
                       </p> 
                     </div> 
                     </div>  
                     <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>   
                     </div>  
                 </div> 
+                <FooterComponents />
           </div>
         );
     }

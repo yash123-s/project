@@ -1,11 +1,45 @@
-/* .body{
-    background-image: url(../images/background.jpg);
-    height: 620px;
-    padding: 100px;
-} */
-
 .charity{
     width:100px;
     height: 100px;
     border-radius: 50%;
+}
+.frontpagebg{
+    background-image: url(../images/bbgregister.jpg);
+    width: 100%;
+    height: 550px;
+}
+.frontpagecolor{
+    background: rgba(248, 35, 35, 0.37);
+    width: 100%;
+    height: 550px;
+}
+.loginpagebg{
+    background-image: url(../images/loginbg.jpeg);
+    padding-right: 18px;
+    margin-left: -18px;
+}
+.loginpagecolor{
+    background: rgba(23, 70, 141, 0.555);
+    width: 104%;
+    height: 550px;
+    padding: 200px;
+    margin-left: -18px;
+}
+.loginhead{
+    color:white;
+    margin-top: -100px;
+}
+.loginform{
+    display: grid;
+  grid-template-columns: 100px 300px ;
+  color: white;
+  font-size: 20px;
+}
+.loginbutton{
+    color: white;
+    background: green;
+}
+.already{
+    color: honeydew;
+    margin-top: 30px;
 }

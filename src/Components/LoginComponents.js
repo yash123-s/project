@@ -30,7 +30,7 @@ class LoginComponents extends Component {
     else if(!reg_mob.test(this.state.mobile)) this.setState({mobileError:'Invalid Mobile number'});
     else {
     t++;
-    this.setState({passwordError:''});
+    this.setState({mobileError:''});
     }
     
     if(t>4) {
@@ -81,26 +81,39 @@ class LoginComponents extends Component {
     render() {
     return ( 
     <div>
+      <h1 className="loginhead">Login Here</h1>
       <form onSubmit={this.handleSubmit} className='signup_form'> 
-      <div className=" row signup_box">
-    
-      <div >
-      <input type='password' name='password' onChange={this.handleChange} placeholder='Password..'></input>
-      <p >{this.state.passwordError}</p>
-      <input type='text' name='mobile' onChange={this.handleChange}  placeholder='Mobile Number..'></input> 
-      <p >{this.state.mobileError}</p> 
-     
-      <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
-      <label>Already registered..?</label><button type="button" class="btn link_btn">Login</button> 
-      </div> 
-      </div>
+        <div className=" row signup_box">
+      
+          <div>
+          <div className="loginform">
+            <label>Password:</label>
+            <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
+          </div>
+          <p className='red'>{this.state.passwordError}</p>
+          
+          <div className="loginform">
+            <label>Contact:</label>
+            <input type='text' name='mobile' onChange={this.handleChange}  placeholder='Mobile Number..'></input> 
+          </div>
+          <p className='red'>{this.state.mobileError}</p> 
+        
+         
+            <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
+            
+            <div>
+              <label className="already">Already registered..?</label>
+              <button type="button" class="btn btn-success signup_btn">Login</button> 
+          </div>
+          </div> 
+        </div>
     
       {/* <input type="submit" value="Submit" color="primary" className="btn btn-primary" />
       <button color="danger" onClick={this.toggle}>Cancel</button> */}
     
       </form>
-      </div> 
-    );
-    }
-    }
+    </div> 
+);
+}
+}
 export default LoginComponents;

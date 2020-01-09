@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/register.css';
-import browserHistory from '../Utlis/browserHistory'
+import browserHistory from '../Utlis/browserHistory';
+import {Signup} from '../Components/UserFile'
 
 class RegisterComponents extends  React.Component {
   constructor(props){
@@ -20,13 +21,13 @@ class RegisterComponents extends  React.Component {
     }
     }
     handleSubmit = () => {debugger
-    // const { firstname,lastname,email,password,mobile } = this.state
-    // const payload = { firstname,lastname,email,password,mobile }
+    const { firstname,lastname,email,password,mobile } = this.state
+    const payload = { firstname,lastname,email,password,mobile }
     
     let reg_user=/^[A-Za-z0-9]{2,10}$/;
     let reg_pwd=/^[A-Za-z0-9]{2,10}$/;
     let reg_email=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let reg_mob=/^(\+\d{1,3}[- ]?)?\d{10}$/;
+    let reg_mob=/^[0-9]{10}$/;
     let t=0;
     if(!this.state.firstname) this.setState({fnameError:'Firstname is required'});
     else if(!reg_user.test(this.state.firstname)) this.setState({fnameError:'Invalid Firstname'});
@@ -58,22 +59,22 @@ class RegisterComponents extends  React.Component {
     else if(!reg_mob.test(this.state.mobile)) this.setState({mobileError:'Invalid Mobile number'});
     else {
     t++;
-    this.setState({passwordError:''});
+    this.setState({mobileError:''});
     }
     
     if(t>4) {
     console.log(this.state)
-//  .signup(payload).then(res => {
-//     this.setState({
-//     firstname: '',
-//     lastname: '',
-//     email: '',
-//     password:'',
-//     mobile:''
-//     })
-    // console.log('hello')
-    // browserHistory.push("/");
-    // });
+    .Signup(payload).then(res => {
+    this.setState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    password:'',
+    mobile:''
+    })
+    console.log('hello')
+    browserHistory.push("/");
+    });
     
     } 
     }
@@ -108,37 +109,70 @@ class RegisterComponents extends  React.Component {
     
     render() {
     return ( 
-    <div className="body">
-    
+    <div>
     {/* <div isOpen={this.state.modal}> */}
       <form onSubmit={this.handleSubmit} className='signup_form'> 
-      <div className=" row signup_box">
-    
-      <div >
-      <h1 className='signup_heading'>Sign up here</h1>
-      <input type='text' name='firstname' onChange={this.handleChange} className='input_box' placeholder='First Name..'></input>
-      <p className='red'>{this.state.fnameError}</p>
-      <input type='text' name='lastname' onChange={this.handleChange} className='input_box' placeholder='Last Name..'></input>
-      <p className='red'>{this.state.lnameError}</p>
-      <input type='text' name='email' onChange={this.handleChange} className='input_box' placeholder='Email..'></input>
-      <p className='red'>{this.state.emailError}</p>
-      <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
-      <p className='red'>{this.state.passwordError}</p>
-      <input type='text' name='mobile' onChange={this.handleChange} className='input_box' placeholder='Mobile Number..'></input> 
-      <p className='red'>{this.state.mobileError}</p> 
-      <div className="radio">
-      <label className="select_one"><input type="radio" value="option1" /> Male</label>
-      <label className="select_one"><input type="radio" value="option1" /> Female</label>
-      <label className="select_one"><input type="radio" value="option1" /> Others</label>
-      </div>
-      <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
-      <label className="signup_lbl">Already registered..?</label><button type="button" class="btn link_btn">Login</button> 
-      </div> 
-      </div>
-    
-      <input type="submit" value="Submit" color="primary" className="btn btn-primary" />
-      <button color="danger" onClick={this.toggle}>Cancel</button>
-    
+        <h1 className='registerhead' >To get registered fill the below form</h1>
+        <div className="register">
+        <div className="registerform">
+          <label>First Name:</label>
+          <input type='text' name='firstname' onChange={this.handleChange} className='input_box' placeholder='First Name..'></input>
+        </div>
+        <p className='red'>{this.state.fnameError}</p>
+        
+        <div className="registerform">
+          <label>Last Name:</label>
+          <input type='text' name='lastname' onChange={this.handleChange} className='input_box' placeholder='Last Name..'></input>
+        </div>
+        <p className='red'>{this.state.lnameError}</p>
+
+        <div className="registerform"> 
+          <label>Email:</label>
+          <input type='text' name='email' onChange={this.handleChange} className='input_box' placeholder='Email..'></input>
+        </div>
+        <p className='red'>{this.state.emailError}</p>
+        
+        <div className="registerform">
+          <label>Password:</label>
+          <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
+        </div>
+        <p className='red'>{this.state.passwordError}</p>
+        
+        <div className="registerform">
+          <label>Contact:</label>
+          <input type='number' name='mobile' onChange={this.handleChange} className='input_box' placeholder='Mobile Number..'></input> 
+        </div>
+        <p className='red'>{this.state.mobileError}</p> 
+        
+        <div className="radio">
+          <label>Gender:</label>
+          <input className="male" type="radio" name="gender" value="male" /> Male
+          <input className="female" type="radio" name="gender" value="female" /> Female
+          <input className="other" type="radio" name="gender" value="other" /> Other 
+        </div>
+        <div className="registergender">
+          <label>Nation:</label>
+          <select >
+            <option>India</option>
+            <option>U.S.A</option>
+            <option>Srilanka</option>
+            <option>Bangladesh</option>
+          </select>
+        </div>
+
+        <div className="registeraddress">
+          <label>Address:</label>
+          <textarea></textarea>
+        </div>
+        <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
+        <label>Already registered..?</label>
+        </div>
+        <div>
+          <button type="button" class="btn link_btn">Login</button> 
+          {/* <input type="submit" value="Submit" color="primary" className="btn btn-primary" /> */}
+          <button color="danger" onClick={this.toggle}>Cancel</button>
+        </div>
+        
       </form>
     </div> 
     );

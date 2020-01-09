@@ -1,74 +1,56 @@
-.body{
-  /* background-image: url(../images/background.jpg); */
-  height: 620px;
-  padding: 100px;
-}
-.register, .loginform {
-  width: 400px;
-  border-radius: 5px;
-  line-height: 16px;
-  color: hsl(0, 56%, 26%);
-  font-size: 12px;
-  margin-left: 100px;
-  margin-top: -100px;
-}
 
-.labelform, .inputregister {
-  display: block;
-  margin-bottom: 10px;
-  width: 90%
+.registerhead{
+  color: rgb(209, 79, 79);
 }
-
-.inputregister {
-  padding: 10px;
-  border: solid 1px #0d1d38;
-  background: transparent;
+.red{
+  color: red;
+  margin-left: -100px;
 }
-
-.buttonregister {
-  background-color: #00BFFF;
-  border-color: #3ac162;
-  font-weight: bold;
-  padding: 12px 15px;
-  color: #ffffff;
-}
-
-.errorMsg {
-  color: #cc0000;
-}
-
-.sucessMsg {
-  color: #6B8E23;
-}
-
-.genderdiv{
-  border: solid 1px #0d1d38;
-  width:90%;
-  height: 40px;
-}
-
-.labelgender{
-  margin-left: -10px;
-}
-
-.genderinput{
-  margin-left: 120px;
-}
-.genderinputf{
+.registerform{
+  display: grid;
+  grid-template-columns: 100px 300px ;
   margin-left: 150px;
 }
-.textfield{
-  width: 90%;
-  height: 40px;
-  margin-left: -40px;
-  background: transparent;
-  border: solid 1px #0d1d38;
+.registergender{
+  display: grid;
+  grid-template-columns: 100px 100px ;
+  margin-left: 150px;
 }
-
-.India{
-  margin-left: 200px;
+.registeraddress{
+  display: grid;
+  grid-template-columns: 100px 300px ;
+  margin-left: 150px;
+  margin-top: 20px;
 }
-.nation{
-  border: solid 1px #0d1d38;
-  width: 363px;
+.radio{
+  display: grid;
+  grid-template-columns: 100px 30px 30px 30px 40px 40px 40px 40px ;
+  margin-left: 150px;
+}
+.male{
+  margin-top: 7px;
+  margin-left: 9px;
+}
+.female{
+  margin-top: 7px;
+  margin-left: 15px;
+}
+.other{
+  margin-top: 7px;
+  margin-left: 23px;
+}
+.register{
+  margin-top: 50px;
+}
+.bgsecond{
+  background: url(../images/bgregister.jpg);
+  padding-top: 150px;
+}
+.bgthird{
+  background:rgba(207, 236, 139, 0.548);
+}
+.shadebackground{
+  background: rgb(246, 248, 139);
+  width: 100%;
+  height: 100%;
 }

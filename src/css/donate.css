@@ -1,0 +1,65 @@
+.credentials{
+    margin-bottom: -50px;
+    color: green;
+    font-weight: bold;
+}
+.textfield{
+    margin-top: 20px;
+    background: transparent;
+    height: 135px;
+    width: 340px;
+    border: 1px rgb(110, 91, 91) solid;
+}
+.donateleftpara{
+    margin: 20px;
+    font-size: 15px;
+    color: rgba(245, 227, 224, 0.616);
+}
+.donateoptions{
+    background: transparent;
+    color: whitesmoke; 
+    width: 340px;
+}
+.donatebg{
+    background: url(../images/donatebgg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.donatebgcolor{
+    background:rgba(43, 3, 11, 0.781);
+    color: whitesmoke;
+}
+.inputtran{
+    background: transparent;
+    color: whitesmoke;
+    border: 1px rgb(110, 91, 91) solid;
+    width: 340px;
+}
+::placeholder{
+    color: whitesmoke;
+}
+.donatebtn{
+    margin:10px;
+    background: rgb(240, 4, 102);
+}
+.inputdonation{
+    background: transparent;
+    color: whitesmoke;
+    border: 1px rgb(110, 91, 91) solid;
+    width: 260px;
+}
+.rupees{
+    height:28px ;
+    border: 1px rgb(110, 91, 91) solid;
+    background: transparent;
+    color: rgb(214, 16, 16);
+}
+.cardimage{
+    width: 55px;
+    height: 55px;
+}
+.cards{
+    display: grid;
+    grid-template-columns:100px 57px 57px 57px 57px ;
+    grid-gap: 3px;
+}

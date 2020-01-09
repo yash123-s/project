@@ -42,7 +42,7 @@
   height: 198px;
   width: 250px;
   margin-left:15px;
-  color:rgb(255, 0, 0);
+  color:whitesmoke;
   font-weight:  bold;
   visibility: hidden;
   opacity: 0;
@@ -61,4 +61,7 @@
 .our{
   font-size: 40px;
   color: rgb(158, 19, 19);
+}
+.vname{
+  margin-top:40px;
 }

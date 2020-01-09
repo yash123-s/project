@@ -6,7 +6,7 @@ import DynamicWishes from './DynamicWishes';
 class FrontPage extends Component {
     render() {
         return (
-            <div className="body">
+            <div className="bodyfront">
                 <div><img src={logo} className="charity" alt="Logo" /></div>
                 <div>Charity</div>
                 <br></br>

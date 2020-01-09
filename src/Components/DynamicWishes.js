@@ -21,7 +21,7 @@ class dynamicWishes extends Component {
           const {hour} = this.state;
           return (
             <div>
-              <h2>{ hour < 12 ?`Good evening` : `Good afternoon`}</h2>
+              <h2>{ hour >12 ?`Good evening` : `Good afternoon`}</h2>
             </div>
           );
         }

@@ -5,24 +5,28 @@ import flood from '../images/flood.jpg'
 import physical from '../images/physical.jpg'
 import orphan from '../images/orphan.jpg'
 import children from '../images/children.jpg'
+import FooterComponents from '../Components/FooterComponents';
+import footerComponents from '../Components/FooterComponents';
+import NavComponents from './NavComponents';
 
 
 class ProjectPage extends Component {
-    constructor(){
-        super()
-          this.state={
-            showMe:false
-          }
-        }
-      Operation()
-    {
-      this.setState({
-    showMe:!this.state.showMe
-      })
-    }
+    // constructor(){
+    //     super()
+    //       this.state={
+    //         showMe:false
+    //       }
+    //     }
+    //   Operation()
+    // {
+    //   this.setState({
+    // showMe:!this.state.showMe
+    //   })
+    // }
     render() {
         return (
             <div className="projectbg">
+               <NavComponents/>
                 <div className="center_content">
                     <h1>CHARITY</h1>
                     <h3>Vinayakanagar 570001,Mysore </h3>
@@ -52,27 +56,24 @@ class ProjectPage extends Component {
                                 <div> >pillows</div>
                                 </Card.Text>
                                 {/* <Button variant="primary">Go somewhere</Button> */}
-                                <div>
-                                {
-          this.state.showMe?
-          <div className="hide">Experience More Pleasure,We don’t live in a perfect world, and there’s never going to be a perfect time to give—but there are always people out there in need of help. Whether interest rates are rising, the economy is in the doldrums, or even if you’re experiencing financial difficulties of your own, the reality is that when you donate your money, you help others who need it.</div>
-          :null
-        }
-        <button className="readmore" onClick={()=>this.Operation()}>Read more</button>
-                                </div>
-                            </Card.Body>
+                                {/* <div>
+                                {this.state.showMe? <div className="hide">Experience More Pleasure,We don’t live in a perfect world, and there’s never going to be a perfect time to give—but there are always people out there in need of help. Whether interest rates are rising, the economy is in the doldrums, or even if you’re experiencing financial difficulties of your own, the reality is that when 
+                                you donate your money, you help others who need it.</div>:null}
+                                <button className="readmore" onClick={()=>this.Operation()}>Read more</button>
+                                </div> */}
+                          </Card.Body>
                         </Card>
-                      </div>
-                      <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <Card className="mainheight li" >
-                            <Card.Img variant="top" src={physical}/>
-                            <Card.Body>
-                                <Card.Title>Physically challenged/mentally retarded</Card.Title>
-                                <Card.Text>
-                                Home schooling,Care taking, feeding
-                                </Card.Text>
-                                {/* <Button variant="primary">Go somewhere</Button> */}
-                            </Card.Body>
+                          </div>
+                          <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <Card className="mainheight li" >
+                                <Card.Img variant="top" src={physical}/>
+                                <Card.Body>
+                                    <Card.Title>Physically challenged/mentally retarded</Card.Title>
+                                    <Card.Text>
+                                    Home schooling,Care taking, feeding
+                                    </Card.Text>
+                                    {/* <Button variant="primary">Go somewhere</Button> */}
+                                </Card.Body>
                         </Card>
                       </div>
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -100,6 +101,7 @@ class ProjectPage extends Component {
                         </Card>
                     </div>
                 </div>
+                <FooterComponents/>
             </div>
         );
     }
