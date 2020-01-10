@@ -6,6 +6,8 @@ import card1 from '../images/paypal.png';
 import card2 from '../images/mastercard.png';
 import card3 from '../images/Gold_Card.png';
 import card4 from '../images/discover.png';
+import { connect } from 'react-redux';
+import {donateHandle} from '../Action/DonateAction';
 
 class DonatePage extends Component {
   constructor(props){
@@ -13,15 +15,19 @@ class DonatePage extends Component {
     this.state={
       firstname:'',
       lastname:'',
+      email:'',
+      project:'Children Education',
+      amounttype:'Rupees',
+      message:'',
+      amount:'',
       fnameError:'',
       lnameError:'',
-      emailError:'',
-    // modal: false,login_modal: false, 
-    }
-    }
+      emailError:''
+      }
+      }
     handleSubmit = () => {
-    // const { firstname,lastname,email,password,mobile } = this.state
-    // const payload = { firstname,lastname,email,password,mobile }
+    const { firstname,lastname,email,project,amounttype,amount,message} = this.state
+    const payload = {firstname,lastname,email,project,amounttype,amount,message}
     
     let reg_user=/^[A-Za-z0-9]{2,10}$/;
     let reg_email=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -45,38 +51,13 @@ class DonatePage extends Component {
     t++;
     this.setState({emailError:''});
     }
-    if(t>4) {
-    console.log(this.state)
-//  .signup(payload).then(res => {
-//     this.setState({
-//     firstname: '',
-//     lastname: '',
-//     email: '',
-//     password:'',
-//     mobile:''
-//     })
-    // console.log('hello')
-    // browserHistory.push("/");
-    // });
-    
+    if(t>2) {
+      this.props.donateHandle(payload);
     } 
   }
     
     handleChange=(e)=>{
     this.setState({[e.target.name]:e.target.value});
-    }
-    handleSignin=()=>{
-    const { firstname,lastname,email} = this.state;
-    const payload = { firstname,lastname,email }
-    // const signinRes = await api.signin(payload)
-    // sessionStorage.setItem('authentication', signinRes.data.token)
-    // sessionStorage.setItem('userEmail', signinRes.data.email)
-    // .then(res => {
-    // const token = res.data.token;
-    // localStorage.setItem('jwtToken',token);
-    // setAuthorizationToken(token);
-    // })
-    browserHistory.push("/title");
     }
     
   render() {
@@ -119,11 +100,11 @@ class DonatePage extends Component {
         </div>
           <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <form>
-              <select className="donateoptions">
-                  <option>Children Education</option>
-                  <option>Funds for Flood effected region</option>
-                  <option>Old age orphanage</option>
-                  <option>Orphan's shelter</option>
+              <select name='project' onChange={this.handleChange} className="donateoptions">
+                  <option value="Children Education" >Children Education</option>
+                  <option value="Flood effected region">Flood effected region</option>
+                  <option value="Old age orphanage">Old age orphanage</option>
+                  <option value="Orphan's shelter">Orphan's shelter</option>
               </select>
             </form>
             <div className="credentials">Note: *Enter the credentials to proceed the payment</div>
@@ -140,14 +121,14 @@ class DonatePage extends Component {
               <input type='text' name='email' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter Email'></input>
               <p className='red'>{this.state.emailError}</p>
             <div>
-              <input className="inputdonation" type="text" placeholder="Donation amount(USD)"></input>
-              <select className="rupees">
-                <option>Rupees</option>
-                <option>$</option>
+              <input name="amount" onChange={this.handleChange} className="inputdonation" type="text" placeholder="Donation amount(USD)"></input>
+              <select name="amounttype" onChange={this.handleChange} className="rupees">
+                <option value="Rupees">Rupees</option>
+                <option value="$">$</option>
               </select>
             </div>
               <div>
-                <input className="textfield" type="text" name="message" placeholder="type what you feel about donation"></input>
+                <input name="message" onChange={this.handleChange} className="textfield" type="text" name="message" placeholder="type what you feel about donation"></input>
               </div>
               <button type="button" onClick={this.handleSubmit} class="donatebtn btn btn-success signup_btn">Donate</button>
               <button class="donatebtn btn btn-success signup_btn" color="danger" onClick={this.toggle}>Cancel</button>
@@ -166,5 +147,8 @@ class DonatePage extends Component {
   );
 }
 }
-
-export default DonatePage;
+const mapStateToProps=(state)=>{
+  const {firstname,lastname,email,project,amounttype,amount,message}=state.DonateReducer
+  return {firstname,lastname,email,project,amounttype,amount,message}
+}
+export default connect(mapStateToProps,{donateHandle})  (DonatePage);

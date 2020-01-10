@@ -2,3 +2,18 @@
     background: rgba(0, 0, 0, 0.411);
     height: 610px;
 }
+th{
+    width:450px;
+    text-align: left;
+    padding: 10px;
+    background-color: #ffff00;
+}
+td{
+    width:450px;
+    text-align: left;
+    padding: 10px;
+    background-color: #c5c597;
+}
+.footeradmin{
+    margin-top: 250px;
+}

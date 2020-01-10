@@ -1,17 +1,21 @@
 .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-.search-container button:hover {
-    background: #ccc;
+  display: block;
+  text-align: left;
+}
+.search-container button {
+  margin-left: 715px;
+  margin-top: -30px;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+}
+.inputsearch{
+  width: 200px;
 }
 .footerbody{
-  background-color: rgb(29, 22, 22);
+  background-color: rgb(247, 228, 228);
+  margin-top: 80px;
+}
+.footericons{
+  color: grey;
 }

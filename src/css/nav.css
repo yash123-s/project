@@ -1,17 +1,26 @@
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(73, 9, 9);
   }
   
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
 }
 .logOut{
-    background-color:inherit;
-    border: none;
+    background-color:grey;
+    border:1px solid gainsboro;
+}
+.navhead{
+  color: white;
+  margin-left: -130px;
+}
+.logoimage{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }

@@ -11,18 +11,6 @@ import NavComponents from './NavComponents';
 
 
 class ProjectPage extends Component {
-    // constructor(){
-    //     super()
-    //       this.state={
-    //         showMe:false
-    //       }
-    //     }
-    //   Operation()
-    // {
-    //   this.setState({
-    // showMe:!this.state.showMe
-    //   })
-    // }
     render() {
         return (
             <div className="projectbg">
@@ -50,17 +38,11 @@ class ProjectPage extends Component {
                             <Card.Body>
                                 <Card.Title>Flood</Card.Title>
                                 <Card.Text>
-                                <div> >Donate food/meals</div>
-                                <div> >water facility</div>
+                                <div> Donate food/meals,water facility</div>
                                 <div> >Donate bedsheets</div>
                                 <div> >pillows</div>
+                                <a class="text-uppercase" href="#">read more</a>
                                 </Card.Text>
-                                {/* <Button variant="primary">Go somewhere</Button> */}
-                                {/* <div>
-                                {this.state.showMe? <div className="hide">Experience More Pleasure,We don’t live in a perfect world, and there’s never going to be a perfect time to give—but there are always people out there in need of help. Whether interest rates are rising, the economy is in the doldrums, or even if you’re experiencing financial difficulties of your own, the reality is that when 
-                                you donate your money, you help others who need it.</div>:null}
-                                <button className="readmore" onClick={()=>this.Operation()}>Read more</button>
-                                </div> */}
                           </Card.Body>
                         </Card>
                           </div>
@@ -70,9 +52,9 @@ class ProjectPage extends Component {
                                 <Card.Body>
                                     <Card.Title>Physically challenged/mentally retarded</Card.Title>
                                     <Card.Text>
-                                    Home schooling,Care taking, feeding
+                                        Home schooling,Care taking, feeding
+                                    <a class="text-uppercase" href="#">read more</a>
                                     </Card.Text>
-                                    {/* <Button variant="primary">Go somewhere</Button> */}
                                 </Card.Body>
                         </Card>
                       </div>
@@ -82,10 +64,10 @@ class ProjectPage extends Component {
                             <Card.Body>
                                 <Card.Title>Old Age Orphans</Card.Title>
                                 <Card.Text>
-                                Providing food, health care
+                                    Providing food, health care
                                 </Card.Text>
-                                {/* <Button variant="primary">Go somewhere</Button> */}
-                            </Card.Body>
+                                <a class="text-uppercase" href="#">read more</a> 
+                              </Card.Body>
                         </Card>
                       </div>
                       <Card className=" mainheight li" >
@@ -93,11 +75,9 @@ class ProjectPage extends Component {
                             <Card.Body>
                                 <Card.Title>Orphans</Card.Title>
                                 <Card.Text>
-                                Education/Schooling, food, shelter
+                                    Education/Schooling, food, shelter
                                 </Card.Text>
-                                
-                                {/* <Button variant="primary">Go somewhere</Button> */}
-                            </Card.Body>
+                                <a class="text-uppercase" href="#">read more</a>                            </Card.Body>
                         </Card>
                     </div>
                 </div>

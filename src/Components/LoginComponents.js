@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import browserHistory from '../Utlis/browserHistory'
+import browserHistory from '../Utlis/browserHistory';
+import '../css/loginComponents.css'
+import { connect } from 'react-redux';
+import {loginHandle} from '../Action/LoginAction';
 
 class LoginComponents extends Component {
   constructor(props){
@@ -12,12 +15,12 @@ class LoginComponents extends Component {
     // modal: false,login_modal: false, 
     }
     }
-    handleSubmit = () => {debugger
-    // const { firstname,lastname,email,password,mobile } = this.state
-    // const payload = { firstname,lastname,email,password,mobile }
+    handleSubmit = () => {
+    const { password,mobile } = this.state
+    const payload = { password,mobile }
     
-    let reg_pwd=/^[A-Za-z0-9]{2,10}$/;
-    let reg_mob=/^(\+\d{1,3}[- ]?)?\d{10}$/;
+    let reg_pwd=/^[@#][A-Za-z0-9]{7,13}$/;
+    let reg_mob=/^[0-9]{10}$/;
     let t=0;
     
     if(!this.state.password) this.setState({passwordError:'Password is required'});
@@ -33,20 +36,8 @@ class LoginComponents extends Component {
     this.setState({mobileError:''});
     }
     
-    if(t>4) {
-    console.log(this.state)
-//  .signup(payload).then(res => {
-//     this.setState({
-//     firstname: '',
-//     lastname: '',
-//     email: '',
-//     password:'',
-//     mobile:''
-//     })
-    // console.log('hello')
-    // browserHistory.push("/");
-    // });
-    
+    if(t>1) {
+    this.props.loginHandle(payload);
     } 
     }
     
@@ -56,27 +47,8 @@ class LoginComponents extends Component {
     handleSignin=()=>{
     const { email,password} = this.state;
     const payload = { email,password }
-    // const signinRes = await api.signin(payload)
-    // sessionStorage.setItem('authentication', signinRes.data.token)
-    // sessionStorage.setItem('userEmail', signinRes.data.email)
-    // .then(res => {
-    // const token = res.data.token;
-    // localStorage.setItem('jwtToken',token);
-    // setAuthorizationToken(token);
-    // })
     browserHistory.push("/title");
     }
-    
-    // toggle=()=> {
-    // this.setState({
-    // modal: !this.state.modal
-    // });
-    // }
-    // login_toggle=()=> {
-    // this.setState({
-    // login_modal: !this.state.login_modal
-    // });
-    // }
     
     render() {
     return ( 
@@ -84,36 +56,32 @@ class LoginComponents extends Component {
       <h1 className="loginhead">Login Here</h1>
       <form onSubmit={this.handleSubmit} className='signup_form'> 
         <div className=" row signup_box">
-      
+    
           <div>
-          <div className="loginform">
-            <label>Password:</label>
-            <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
-          </div>
-          <p className='red'>{this.state.passwordError}</p>
-          
           <div className="loginform">
             <label>Contact:</label>
             <input type='text' name='mobile' onChange={this.handleChange}  placeholder='Mobile Number..'></input> 
           </div>
           <p className='red'>{this.state.mobileError}</p> 
-        
-         
-            <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
-            
-            <div>
-              <label className="already">Already registered..?</label>
-              <button type="button" class="btn btn-success signup_btn">Login</button> 
+          <div className="loginform">
+            <label>Password:</label>
+            <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
           </div>
+          <p className='red'>{this.state.passwordError}</p>
+          <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
           </div> 
         </div>
-    
-      {/* <input type="submit" value="Submit" color="primary" className="btn btn-primary" />
-      <button color="danger" onClick={this.toggle}>Cancel</button> */}
-    
       </form>
+      {/* <p>
+      {this.props.password}
+      {this.props.mobile}</p> */}
     </div> 
+    
 );
 }
 }
-export default LoginComponents;
+ const mapStateToProps=(state)=>{
+  const {password,mobile }=state.LoginReducer
+  return {password,mobile }
+}
+export default connect(mapStateToProps,{loginHandle})  (LoginComponents);
