@@ -23,15 +23,15 @@ function App() {
     <div className="App">
      <Router> 
        <switch> 
-         <Route exact path='/' component={NavComponents}></Route>
+         {/* <Route exact path='/' component={NavComponents}></Route> */}
          <Route exact path='/footer' component={FooterComponents}></Route>
-         <Route exact path='/home' component={homeComponents}></Route>
-         <Route exact path='/login' component={LoginComponents}></Route>
+         <Route exact path='/' component={homeComponents}></Route>
+         {/* <Route exact path='/login' component={LoginComponents}></Route> */}
          {/* <Route exact path='/wish' component={DynamicWishes}></Route> */}
-         <Route exact path='/register' component={RegisterComponents}></Route>
+         {/* <Route exact path='/register' component={RegisterComponents}></Route> */}
          {/* <Route exact path='/front' component={frontpage}></Route> */}
          <Route exact path='/first' component={Firstpage}></Route>
-         <Route exact path='/slider' component={SliderPage}></Route>
+         {/* <Route exact path='/slider' component={SliderPage}></Route> */}
          <Route exact path='/second' component={RegisterPage}></Route>
          <Route exact path='/Project' component={ProjectPage}></Route>
          <Route exact path='/about' component={About}></Route>

@@ -17,7 +17,7 @@
 }
 .donateoptions{
     background: transparent;
-    color: whitesmoke; 
+    color: rgb(255, 0, 0); 
     width: 340px;
 }
 .donatebg{
@@ -35,9 +35,9 @@
     border: 1px rgb(110, 91, 91) solid;
     width: 340px;
 }
-::placeholder{
+/* ::placeholder{
     color: whitesmoke;
-}
+} */
 .donatebtn{
     margin:10px;
     background: rgb(240, 4, 102);

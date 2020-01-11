@@ -31,7 +31,7 @@ showMe:!this.state.showMe
           
           <div className="para">
             Please help them and donate now
-            <button className="donatenow">Donate Now  </button>
+            <button className="donatenow"><a href="/first">Donate Now  </a></button>
           </div>
         </div>
         <div><FooterComponents /></div>

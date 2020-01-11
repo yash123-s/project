@@ -136,11 +136,11 @@ class RegisterComponents extends  React.Component {
             <label>Address:</label>
             <textarea></textarea>
           </div>
-          <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN IN</button>
+          <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
           </div>
           <div>
             <label>Already registered..?</label>
-            <button type="button" class="btn btn-success signup_btn"><a href='./Firstpage'>Login</a></button> 
+            <button type="button" class="btn btn-success signup_btn">SIGN IN</button> 
           </div>
         </form>
       {/* <p>{this.props.firstname}

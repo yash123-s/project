@@ -55,8 +55,7 @@ class LoginComponents extends Component {
     <div>
       <h1 className="loginhead">Login Here</h1>
       <form onSubmit={this.handleSubmit} className='signup_form'> 
-        <div className=" row signup_box">
-    
+        <div className=" row">
           <div>
           <div className="loginform">
             <label>Contact:</label>
@@ -68,8 +67,12 @@ class LoginComponents extends Component {
             <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
           </div>
           <p className='red'>{this.state.passwordError}</p>
-          <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN UP</button>
+          <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN IN</button>
           </div> 
+          <div>
+            <label>Not registered before..?</label>
+            <button type="button" class="btn btn-success signup_btn">SIGN UP</button> 
+          </div>
         </div>
       </form>
       {/* <p>

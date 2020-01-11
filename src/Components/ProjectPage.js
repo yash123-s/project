@@ -41,7 +41,7 @@ class ProjectPage extends Component {
                                 <div> Donate food/meals,water facility</div>
                                 <div> >Donate bedsheets</div>
                                 <div> >pillows</div>
-                                <a class="text-uppercase" href="#">read more</a>
+                                <a class="text-uppercase" href="/about">read more</a>
                                 </Card.Text>
                           </Card.Body>
                         </Card>
@@ -53,7 +53,7 @@ class ProjectPage extends Component {
                                     <Card.Title>Physically challenged/mentally retarded</Card.Title>
                                     <Card.Text>
                                         Home schooling,Care taking, feeding
-                                    <a class="text-uppercase" href="#">read more</a>
+                                    <a class="text-uppercase" href="/about">read more</a>
                                     </Card.Text>
                                 </Card.Body>
                         </Card>
@@ -61,12 +61,13 @@ class ProjectPage extends Component {
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <Card className="mainheight li" >
                             <Card.Img  variant="top" src={orphan} onmouseover={orphan} />
+                            <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
                             <Card.Body>
                                 <Card.Title>Old Age Orphans</Card.Title>
                                 <Card.Text>
                                     Providing food, health care
                                 </Card.Text>
-                                <a class="text-uppercase" href="#">read more</a> 
+                                <a class="text-uppercase" href="/about">read more</a> 
                               </Card.Body>
                         </Card>
                       </div>
@@ -77,7 +78,7 @@ class ProjectPage extends Component {
                                 <Card.Text>
                                     Education/Schooling, food, shelter
                                 </Card.Text>
-                                <a class="text-uppercase" href="#">read more</a>                            </Card.Body>
+                                <a class="text-uppercase" href="/about">read more</a>                            </Card.Body>
                         </Card>
                     </div>
                 </div>

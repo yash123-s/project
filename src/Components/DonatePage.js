@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavComponents from '../Components/NavComponents';
 import browserHistory from '../Utlis/browserHistory';
 import '../css/donate.css';
+import axios from 'axios'; 
 import card1 from '../images/paypal.png';
 import card2 from '../images/mastercard.png';
 import card3 from '../images/Gold_Card.png';
@@ -147,6 +148,17 @@ class DonatePage extends Component {
   );
 }
 }
+class DonateGet extends Component{
+  state = { donars:[]}
+  componentDidMount(){
+      axios.get('http://localhost:8212/donate')
+      .then(res => {
+          this.setState({donars: res.data});
+          console.log(this.state.users);
+      });
+  }
+}
+
 const mapStateToProps=(state)=>{
   const {firstname,lastname,email,project,amounttype,amount,message}=state.DonateReducer
   return {firstname,lastname,email,project,amounttype,amount,message}
