@@ -140,7 +140,7 @@ class RegisterComponents extends  React.Component {
           </div>
           <div>
             <label>Already registered..?</label>
-            <button type="button" class="btn btn-success signup_btn">SIGN IN</button> 
+            <a href="/"><button type="button" class="btn btn-success signup_btn">SIGN IN</button> </a>
           </div>
         </form>
       {/* <p>{this.props.firstname}

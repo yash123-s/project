@@ -3,7 +3,7 @@ import axios from 'axios';
 export function donateHandle(payload){
 const options = {
     url: 'http://localhost:8212/donate',
-    method: 'POST GET',
+    method: 'POST',
     // headers: {
     //   'Accept': 'application/json',
     //   'Content-Type': 'application/json;charset=UTF-8'

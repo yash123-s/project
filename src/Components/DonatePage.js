@@ -9,6 +9,7 @@ import card3 from '../images/Gold_Card.png';
 import card4 from '../images/discover.png';
 import { connect } from 'react-redux';
 import {donateHandle} from '../Action/DonateAction';
+import VerifyCard from './VerifyCard';
 
 class DonatePage extends Component {
   constructor(props){
@@ -54,6 +55,8 @@ class DonatePage extends Component {
     }
     if(t>2) {
       this.props.donateHandle(payload);
+      browserHistory.push('/card')
+      // alert("Donated successfully, Thank you keep donating")
     } 
   }
     
@@ -148,16 +151,16 @@ class DonatePage extends Component {
   );
 }
 }
-class DonateGet extends Component{
-  state = { donars:[]}
-  componentDidMount(){
-      axios.get('http://localhost:8212/donate')
-      .then(res => {
-          this.setState({donars: res.data});
-          console.log(this.state.users);
-      });
-  }
-}
+// class DonateGet extends Component{
+//   state = { donars:[]}
+//   componentDidMount(){
+//       axios.get('http://localhost:8212/donate')
+//       .then(res => {
+//           this.setState({donars: res.data});
+//           console.log(this.state.users);
+//       });
+//   }
+// }
 
 const mapStateToProps=(state)=>{
   const {firstname,lastname,email,project,amounttype,amount,message}=state.DonateReducer

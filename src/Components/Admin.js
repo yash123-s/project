@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import '../css/Admin.css';
+import axios from 'axios';
 import NavComponents from '../Components/NavComponents';
 import FooterComponents from '../Components/FooterComponents';
 
 class Admin extends Component {
+    state={
+        data:[]
+    }
+    componentDidMount=()=>{
+        axios.get('http://localhost:8212/donate')
+        .then(res => {
+            this.setState({data: res.data});
+        });
+    }
     render() {
         return (
             <div className="adminbg">
@@ -16,24 +26,15 @@ class Admin extends Component {
                         <th>Donated amount</th>
                         <th>Rupees/$</th>
                     </tr>
+                    {this.state.data.map(name=>
                     <tr>
-                        <td>Yashaswini S Gowda</td>
-                        <td> Children Education</td>
-                        <td>10,000</td>
-                        <td>Rupees</td>
-                    </tr>
-                    <tr>
-                        <td>Karthik</td>
-                        <td>Flood</td>
-                        <td>20,000</td>
-                        <td>Rupees</td>
-                    </tr>
-                    <tr>
-                        <td>Joe</td>
-                        <td>Old age</td>
-                        <td>500</td>
-                        <td>$</td>
-                    </tr>
+                        <td>{name.firstname}</td>
+                        <td>{name.project}</td>
+                        <td>{name.amount}</td>
+                        <td>{name.amounttype}</td>
+                    </tr>   
+                    )}
+                
                 </table>
                 <div className="footeradmin"><FooterComponents /></div>
             </div>

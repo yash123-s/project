@@ -9,7 +9,6 @@ class Firstpage extends Component {
     render() {
         return (
             <div>
-               <NavComponents/>
                 <div className="row ">
                     <div className="frontpagebg col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <div className="frontpagecolor">
@@ -22,7 +21,7 @@ class Firstpage extends Component {
                         </div>
                     </div>       
                 </div>
-                <FooterComponents />
+                {/* <FooterComponents /> */}
             </div>
         );
     }

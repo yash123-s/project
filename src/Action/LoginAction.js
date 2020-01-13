@@ -1,8 +1,9 @@
 import axios from 'axios';
+import browserHistory from '../Utlis/browserHistory';
 
 export function loginHandle(payload){
 const options = {
-    url: 'http://localhost:8211/Signup',
+    url: 'http://localhost:8212/Signin',
     method: 'POST',
     // headers: {
     //   'Accept': 'application/json',
@@ -15,7 +16,10 @@ const options = {
      {console.log(payload)
         axios(options)
         .then(response => {
-          console.log(response.status);
+          debugger
+          console.log(response);
+          sessionStorage.setItem('authentication', response.data.token)
+          browserHistory.push("/home");
         });
        dispatch({type:'LOGIN',payload:payload});
      }

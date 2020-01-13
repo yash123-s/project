@@ -38,16 +38,13 @@ class LoginComponents extends Component {
     
     if(t>1) {
     this.props.loginHandle(payload);
+        // 
+
     } 
     }
     
     handleChange=(e)=>{
     this.setState({[e.target.name]:e.target.value});
-    }
-    handleSignin=()=>{
-    const { email,password} = this.state;
-    const payload = { email,password }
-    browserHistory.push("/title");
     }
     
     render() {
@@ -70,8 +67,8 @@ class LoginComponents extends Component {
           <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN IN</button>
           </div> 
           <div>
-            <label>Not registered before..?</label>
-            <button type="button" class="btn btn-success signup_btn">SIGN UP</button> 
+            <label className="notregistered">Not registered before..?</label>
+            <button type="button" class=" btn btn-success signup_btn"><a href="/second">SIGN UP</a></button> 
           </div>
         </div>
       </form>

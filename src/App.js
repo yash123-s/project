@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router,Redirect, Route, Switch,} from 'react-router-dom';
 import NavComponents from "./Components/NavComponents";
 import FooterComponents from "./Components/FooterComponents";
 import homeComponents from './Components/homeComponents';
@@ -16,34 +16,32 @@ import ProjectPage from './Components/ProjectPage';
 import About from './Components/About';
 import DonatePage from './Components/DonatePage';
 import Admin from './Components/Admin';
+import VerifyCard from './Components/VerifyCard';
 
+const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
+  <Route
+  {...rest}
+  render={props => (  
+    (sessionStorage.getItem('authentication')) ? (<IncomingComponent {...props} />) : (
+      <Redirect to={{pathname: '/', state: { from: props.location }, }}/>)
+  )}
+/>
+);
 
 function App() {
   return (
     <div className="App">
      <Router> 
-       <switch> 
-         {/* <Route exact path='/' component={NavComponents}></Route> */}
-         <Route exact path='/footer' component={FooterComponents}></Route>
-         <Route exact path='/' component={homeComponents}></Route>
-         {/* <Route exact path='/login' component={LoginComponents}></Route> */}
-         {/* <Route exact path='/wish' component={DynamicWishes}></Route> */}
-         {/* <Route exact path='/register' component={RegisterComponents}></Route> */}
-         {/* <Route exact path='/front' component={frontpage}></Route> */}
-         <Route exact path='/first' component={Firstpage}></Route>
-         {/* <Route exact path='/slider' component={SliderPage}></Route> */}
-         <Route exact path='/second' component={RegisterPage}></Route>
-         <Route exact path='/Project' component={ProjectPage}></Route>
-         <Route exact path='/about' component={About}></Route>
-         <Route exact path='/donate' component={DonatePage}></Route>
-         <Route exact path='/admin' component={Admin}></Route>
-
-
-
-
-
-
-       </switch> 
+        <Switch> 
+          <Route exact path='/' component={Firstpage}></Route>
+          <Route exact path='/second' component={RegisterPage}></Route>
+          <PrivateRoute exact path='/home' component={homeComponents}></PrivateRoute>
+          <PrivateRoute exact path='/Project' component={ProjectPage}></PrivateRoute>
+          <PrivateRoute exact path='/about' component={About}></PrivateRoute>
+          <PrivateRoute exact path='/donate' component={DonatePage}></PrivateRoute>
+          <PrivateRoute exact path='/admin' component={Admin}></PrivateRoute>
+          <PrivateRoute exact path='/card' component={VerifyCard}></PrivateRoute>
+       </Switch> 
        </Router> 
        
     </div>

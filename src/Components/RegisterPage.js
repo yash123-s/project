@@ -7,20 +7,19 @@ import FooterComponents from '../Components/FooterComponents';
 
 class RegisterPage extends Component {
     render() {
-        return (
-            <div>
-                <NavComponents/>
-                <div className="row">
-                    <div className="bgsecond col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <FrontPage />
-                    </div>
-            
-                    <div className="bgthird col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <RegisterComponents />
-                    </div>       
-                </div>
-                <FooterComponents />
-             </div>
+      return (
+        <div>
+          <div className="row">
+              <div className="bgsecond col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <FrontPage />
+              </div>
+      
+              <div className="bgthird col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                  <RegisterComponents />
+              </div>       
+          </div>
+          {/* <FooterComponents /> */}
+        </div>
         );
     }
 }

@@ -1,5 +1,6 @@
 .background {   
     background-image: url(../images/donate.jpg);
+    /* background-color: red; */
     height:400px;
     background-repeat: no-repeat;
     margin-left: 200px;

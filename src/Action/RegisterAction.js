@@ -1,7 +1,7 @@
 import axios from 'axios'
 export function registerHandle(payload){
 const options = {
-    url: 'http://localhost:8211/Signup',
+    url: 'http://localhost:8212/Signup',
     method: 'POST',
     // headers: {
     //   'Accept': 'application/json',

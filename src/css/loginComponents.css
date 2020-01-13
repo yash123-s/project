@@ -52,3 +52,8 @@
   display: grid;
   grid-template-columns:110px 30px 20px 140px;
 }
+.notregistered{
+  color:white;
+  font-weight: bold;
+  margin-top: 40px;
+}
