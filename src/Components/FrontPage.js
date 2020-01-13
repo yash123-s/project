@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../images/charity.png';
 import '../css/frontPage.css';
 import DynamicWishes from './DynamicWishes';
+import SliderPage from '../Components/SliderPage';
 
 class FrontPage extends Component {
     render() {
@@ -14,10 +15,12 @@ class FrontPage extends Component {
                     <h2>Welcome to Charity</h2>
                     {/* <div>save life, educate orphans,provide shelter</div> */}
                 </div>
+                <div style={{height:"150px",paddingTop:"30px"}}><SliderPage /></div>
+                <div></div>
                 <div>
-                  <i class="fas fa-adjust"></i>             
+                  <i class="fa fa-adjust" style={{fontSize:"30px"}}></i>             
                 </div>
-                <br></br>
+               
                 <div><DynamicWishes/></div>
             </div>
         );

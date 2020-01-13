@@ -9,7 +9,6 @@ import card3 from '../images/Gold_Card.png';
 import card4 from '../images/discover.png';
 import { connect } from 'react-redux';
 import {donateHandle} from '../Action/DonateAction';
-import VerifyCard from './VerifyCard';
 
 class DonatePage extends Component {
   constructor(props){

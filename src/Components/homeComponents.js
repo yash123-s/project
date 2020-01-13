@@ -20,7 +20,7 @@ showMe:!this.state.showMe
     return (
       <div>
         <NavComponents/>
-        <div className="background">
+        <div className="backgroundhome">
           <div><h1 className="heading">Your Donation is others<br/> inspiration</h1></div>
           {
             this.state.showMe?

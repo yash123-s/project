@@ -6,7 +6,7 @@ import FooterComponents from '../Components/FooterComponents';
 
 class Admin extends Component {
     state={
-        data:[]
+    data:[]
     }
     componentDidMount=()=>{
         axios.get('http://localhost:8212/donate')

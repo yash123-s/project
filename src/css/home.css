@@ -1,4 +1,4 @@
-.background {   
+.backgroundhome {   
     background-image: url(../images/donate.jpg);
     /* background-color: red; */
     height:400px;
@@ -27,6 +27,7 @@
     margin-left: 50px;
     margin-top: 150px;
     padding-top: 20px;
+    position: absolute;
 }
 .donatenow{
     margin-left: 400px;
