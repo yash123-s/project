@@ -12,15 +12,16 @@ const options = {
     data: payload
   };
   
-    return function(dispatch)
-     {console.log(payload)
-        axios(options)
-        .then(response => {
-          debugger
-          console.log(response);
-          sessionStorage.setItem('authentication', response.data.token)
-          browserHistory.push("/home");
-        });
-       dispatch({type:'LOGIN',payload:payload});
-     }
+  return function(dispatch)
+    {console.log(payload)
+      axios(options)
+      .then(response => {
+        debugger
+        console.log(response);
+        sessionStorage.setItem('authentication', response.data.token)
+        sessionStorage.setItem('role', response.data.role)
+        browserHistory.push("/home");
+      });
+      dispatch({type:'LOGIN',payload:payload});
+    }
 }

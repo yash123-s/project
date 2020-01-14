@@ -41,7 +41,7 @@ class About extends Component {
                                   Funds will also help organizations rebuild their infrastructure and
                                   replace destroyed equipment and supplies.
                               </p>
-                              <a href="#"><button className="learnmore">Learn More -> </button></a>
+                              <a href="/project"><button className="learnmore">Learn More -> </button></a>
                           
                           <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                         </div> 

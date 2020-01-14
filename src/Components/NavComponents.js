@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import '../css/nav.css';
+import axios from 'axios';
 import image from '../images/logo.jpeg'
 import browserHistory from '../Utlis/browserHistory';
 
 class NavComponents extends Component {
+  state={
+    visible:false
+  }
+
   logout =()=>{
     sessionStorage.removeItem('authentication' )
     browserHistory.push('/')
+  }
+  componentDidMount=()=>{
+    sessionStorage.getItem('role')=='admin' ? this.setState({visible: false}) : this.setState({visible: true})
   }
   render() {
     return (
@@ -18,7 +26,10 @@ class NavComponents extends Component {
           <a href="/project">Projects</a>
           <a href="/about">About</a>
           <a href="/donate">Donate Options </a>  
-          <button className="logOut" onClick={this.logout}>Log Out</button>
+          
+          <a hidden={this.state.visible} href="/admin"><button className="logOut">Admin</button></a>
+          <button className="logOut"  onClick={this.logout}>Log Out</button>
+          
         </div>
       </div>
     );
