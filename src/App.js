@@ -17,6 +17,9 @@ import About from './Components/About';
 import DonatePage from './Components/DonatePage';
 import Admin from './Components/Admin';
 import VerifyCard from './Components/VerifyCard';
+import LiveNews from './Components/LiveNews';
+import News from './Components/News';
+import Forgot from './Components/Forgot';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -40,7 +43,11 @@ function App() {
           <PrivateRoute exact path='/about' component={About}></PrivateRoute>
           <PrivateRoute exact path='/donate' component={DonatePage}></PrivateRoute>
           <PrivateRoute exact path='/admin' component={Admin}></PrivateRoute>
+          <PrivateRoute exact path='/livenews' component={LiveNews}></PrivateRoute>
           <PrivateRoute exact path='/card' component={VerifyCard}></PrivateRoute>
+          <Route exact path='/newpassword' component={News}></Route>
+          <Route exact path='/forgot' component={Forgot}></Route>
+
        </Switch> 
        </Router> 
        

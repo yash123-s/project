@@ -8,38 +8,39 @@ class Admin extends Component {
     state={
     data:[]
     }
-   
     componentDidMount=()=>{
-        axios.get('http://localhost:8212/donate')
-        .then(res => { console.log(res.data)
-            this.setState({data: res.data});
-        });
+      debugger;
+      axios.get('http://localhost:4000/donate')
+      .then(res => { 
+        this.setState({data: res.data});
+      });
     }
     render() {
-        return (
-            <div className="adminbg">
-                <NavComponents />
-                <h1>Admin Portal</h1>
-                <table border="2">
-                    <tr>
-                        <th>Name</th>
-                        <th>Donated for</th>
-                        <th>Donated amount</th>
-                        <th>Rupees/$</th>
-                    </tr>
-                    {this.state.data.map(name =>
-                    <tr>
-                        <td>{name.firstname}</td>
-                        <td>{name.project}</td>
-                        <td>{name.amount}</td>
-                        <td>{name.amounttype}</td>
-                    </tr>   
-                    )}
-                
-                </table>
-                <div className="footeradmin"><FooterComponents /></div>
-            </div>
-        );
+      return (
+        <div className="adminbg">
+          <NavComponents />
+          <h1>Admin Portal</h1>
+          <table border="2">
+            <tr>
+              <th>Name</th>
+              <th>Donated for</th>
+              <th>Donated amount</th>
+              <th>Rupees/$</th>
+            </tr>
+            {this.state.data.map(name =>
+            <tr>
+              <td>{name.firstname}</td>
+              <td>{name.project}</td>
+              <td>{name.amount}</td>
+              <td>{name.amounttype}</td>
+            </tr>   
+            )}
+          </table>
+          
+          <div className="footeradmin"><FooterComponents /></div>
+         
+        </div>
+      );
     }
 }
 

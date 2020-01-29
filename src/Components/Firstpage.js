@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FrontPage from './FrontPage';
 import LoginComponents from './LoginComponents';
-import NavComponents from './NavComponents';
 import '../css/frontPage.css';
 import FooterComponents from './FooterComponents'; 
 

@@ -30,6 +30,7 @@ class DonatePage extends Component {
     const { firstname,lastname,email,project,amounttype,amount,message} = this.state
     const payload = {firstname,lastname,email,project,amounttype,amount,message}
     
+    console.log(payload)
     let reg_user=/^[A-Za-z0-9]{2,10}$/;
     let reg_email=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let t=0;
@@ -54,7 +55,7 @@ class DonatePage extends Component {
     }
     if(t>2) {
       this.props.donateHandle(payload);
-      browserHistory.push('/card')
+      // browserHistory.push('/card')
       // alert("Donated successfully, Thank you keep donating")
     } 
   }
@@ -150,16 +151,6 @@ class DonatePage extends Component {
   );
 }
 }
-// class DonateGet extends Component{
-//   state = { donars:[]}
-//   componentDidMount(){
-//       axios.get('http://localhost:8212/donate')
-//       .then(res => {
-//           this.setState({donars: res.data});
-//           console.log(this.state.users);
-//       });
-//   }
-// }
 
 const mapStateToProps=(state)=>{
   const {firstname,lastname,email,project,amounttype,amount,message}=state.DonateReducer

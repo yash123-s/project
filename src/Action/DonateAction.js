@@ -1,8 +1,10 @@
 import axios from 'axios';
+import browserHistory from '../Utlis/browserHistory';
+
 
 export function donateHandle(payload){
 const options = {
-    url: 'http://localhost:8212/donate',
+    url: 'http://localhost:4000/donate',
     method: 'POST',
     // headers: {
     //   'Accept': 'application/json',
@@ -16,8 +18,9 @@ const options = {
         console.log(payload);
         axios(options)
         .then(response => {
+          browserHistory.push('/card')
           console.log(response.status);
         });
-       dispatch({type:'DONATE',payload:payload});
+       dispatch({type:'DONATE',payload:payload})
      }
 }

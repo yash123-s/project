@@ -9,42 +9,47 @@ class LoginComponents extends Component {
     super(props);
     this.state={
     password:'',
-    mobile:'',
+    email:'',
+    emailError:'',
     passwordError:'',
-    mobileError:'',
-    // modal: false,login_modal: false, 
+    // error:''
     }
     }
-    handleSubmit = () => {
-    const { password,mobile } = this.state
-    const payload = { password,mobile }
+    handleChange=(e)=>{
+      this.setState({[e.target.name]:e.target.value});
+      }
+    confirmmail=(e)=>{
+      sessionStorage.setItem('change',this.state.email)
+      browserHistory.push('/forgot');
+    }
+    handleSubmit = () => {debugger;
+    const {email,password} = this.state
+    const payload = {email,password}
     
-    let reg_pwd=/^[@#][A-Za-z0-9]{7,13}$/;
-    let reg_mob=/^[0-9]{10}$/;
+    let reg_pwd=/^[a-zA-Z0-9@*#]{8,15}$/;
+    // let reg_mob=/^[0-9]{10}$/;
     let t=0;
-    
+    if (this.state.email.length === 0 && this.state.password.length === 0 ) {
+      this.setState({
+        emailError: "Email is required",
+        passwordError: "Password is required"
+      })
+      }
+
     if(!this.state.password) this.setState({passwordError:'Password is required'});
     else if(!reg_pwd.test(this.state.password)) this.setState({passwordError:'Invalid Password'});
     else {
     t++;
     this.setState({passwordError:''});
     }
-    if(!this.state.mobile) this.setState({mobileError:'Mobile number is required'});
-    else if(!reg_mob.test(this.state.mobile)) this.setState({mobileError:'Invalid Mobile number'});
-    else {
-    t++;
-    this.setState({mobileError:''});
-    }
-    
-    if(t>1) {
-    this.props.loginHandle(payload);
-        // 
 
-    } 
+    if(!this.state.email) this.setState({emailError:'email is required'});
+    else if (!this.state.email.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]$/)) {
+      this.setState({ emailError: "Please enter the valid email" })
+    t++;
+    this.setState({emailError:''});
     }
-    
-    handleChange=(e)=>{
-    this.setState({[e.target.name]:e.target.value});
+    this.props.loginHandle(payload);
     }
     
     render() {
@@ -54,34 +59,36 @@ class LoginComponents extends Component {
       <form onSubmit={this.handleSubmit} className='signup_form'> 
         <div className=" row">
           <div>
+          
           <div className="loginform">
-            <label>Contact:</label>
-            <input type='text' name='mobile' onChange={this.handleChange}  placeholder='Mobile Number..'></input> 
+            <label>E-mail:</label>
+            <input type='text' name='email' onChange={this.handleChange}  placeholder='enter email'></input> 
           </div>
-          <p className='red'>{this.state.mobileError}</p> 
+          <p className='red'>{this.state.emailError}</p> 
+          
           <div className="loginform">
             <label>Password:</label>
-            <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password..'></input>
+            <input type='password' name='password' onChange={this.handleChange} className='input_box' placeholder='Password'></input>
           </div>
           <p className='red'>{this.state.passwordError}</p>
           <button type="button" onClick={this.handleSubmit} class="btn btn-success signup_btn">SIGN IN</button>
           </div> 
+          
+          <div>
+            <a onClick={this.confirmmail}>Forgot Password</a>
+          </div>
           <div>
             <label className="notregistered">Not registered before..?</label>
             <button type="button" class=" btn btn-success signup_btn"><a href="/second">SIGN UP</a></button> 
           </div>
         </div>
       </form>
-      {/* <p>
-      {this.props.password}
-      {this.props.mobile}</p> */}
     </div> 
-    
 );
 }
 }
  const mapStateToProps=(state)=>{
-  const {password,mobile }=state.LoginReducer
-  return {password,mobile }
+  const {password,email}=state.LoginReducer
+  return {password,email}
 }
 export default connect(mapStateToProps,{loginHandle})  (LoginComponents);

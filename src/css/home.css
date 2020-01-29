@@ -7,17 +7,21 @@
     margin-top: 60px;
 }
 .heading{
-    color:#f70000;
-    font-size: 60px;
-    margin-left: -400px;
+    color:#e6e6f3;
+    font-size: 46px;
+    margin-left: -195px;
 }
 .hide{
-    color: white;
-    width: 1000px;
+    color:black;
+    width: 855px;
 }
 .readmore{
     margin-left: -600px;
     /* margin-bottom: -500px; */
+    margin-top: 30px;
+    background-color: rgba(181, 181, 201, 0.788);
+    border-radius: 20px;
+    padding: 5px;
 }
 .para{
     background-image: url(../images/vibgyor.png);
@@ -25,7 +29,7 @@
     height: 100px;
     background-size: cover;
     margin-left: 50px;
-    margin-top: 150px;
+    margin-top: 175px;
     padding-top: 20px;
     position: absolute;
 }
@@ -35,4 +39,7 @@
     border-radius: 20px;
     border-color: white;
     margin-top: -100px;
+    background-color: rgba(181, 181, 201, 0.788);
+    border-radius: 20px;
+    padding: 5px;
 }

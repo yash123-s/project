@@ -21,11 +21,12 @@ class RegisterComponents extends  React.Component {
     }
     }
     handleSubmit = () => {
+      debugger;
     const { firstname,lastname,email,password,mobile } = this.state
     const payload = { firstname,lastname,email,password,mobile }
     
     let reg_user=/^[A-Za-z0-9]{2,10}$/;
-    let reg_pwd=/^[@#][A-Za-z0-9]{7,13}$/;
+    let reg_pwd=/^[a-zA-Z0-9@*#]{8,15}$/;
     let reg_email=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let reg_mob=/^[0-9]{10}$/;
     let t=0;

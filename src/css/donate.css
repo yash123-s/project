@@ -1,6 +1,6 @@
 .credentials{
     margin-bottom: -50px;
-    color: green;
+    color: rgb(247, 51, 51);
     font-weight: bold;
 }
 .textfield{
@@ -56,10 +56,10 @@
 }
 .cardimage{
     width: 55px;
-    height: 55px;
+    height:30px;
 }
 .cards{
     display: grid;
-    grid-template-columns:100px 57px 57px 57px 57px ;
-    grid-gap: 3px;
+    grid-template-columns:100px 50px 50px 50px 50px ;
+    grid-gap: 5px;
 }

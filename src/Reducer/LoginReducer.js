@@ -1,14 +1,14 @@
 const initialState={
-    mobile:'',
-    password:''
-    
+    email:'',
+    password:'',
+    error:''   
 }
 export default(state = initialState,action)=>{
     // debugger
     switch(action.type){
         case "LOGIN":{
         return{...state,
-            mobile:action.payload.mobile, 
+            email:action.payload.email, 
             password:action.payload.password
         }
     }

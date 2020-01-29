@@ -10,7 +10,7 @@ class NavComponents extends Component {
   }
 
   logout =()=>{
-    sessionStorage.removeItem('authentication' )
+    sessionStorage.removeItem('authentication')
     browserHistory.push('/')
   }
   componentDidMount=()=>{
