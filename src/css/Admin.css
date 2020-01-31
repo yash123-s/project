@@ -1,19 +1,39 @@
-.adminbg{
-    background: rgba(0, 0, 0, 0.411);
-    height: 610px;
+.search-container button {
+    display: block;
+    text-align: left;
+}
+.inputsearch{
+    color: white;
+}
+.inputsearch {
+    background-color: transparent;
+    width: 90%;
+    height: 40px;
+    border: 0 ;
+}
+.searchContainer{
+    background-color:  #2b1d1dfb;
+    width:30%;
+    border-radius: 20px;
+    padding: 0;
+    margin-left: 450px;
 }
 th{
-    width:450px;
     text-align: left;
     padding: 10px;
-    background-color: #ffff00;
+    color: white;
+    background-color: #153d2a;
 }
 td{
-    width:450px;
+    width:350px;
     text-align: left;
     padding: 10px;
-    background-color: #c5c597;
+    background-color: rgb(208, 210, 214);
 }
 .footeradmin{
     margin-top: 250px;
+}
+.admin_search{
+    display: grid;
+    grid-template-columns: auto auto;
 }

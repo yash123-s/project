@@ -1,21 +1,35 @@
 .search-container button {
   display: block;
   text-align: left;
+  padding-top:20px;
 }
-.search-container button {
-  margin-left: 715px;
-  margin-top: -30px;
-  font-size: 19px;
-  border: none;
-  cursor: pointer;
-}
+
 .inputsearch{
   width: 200px;
 }
-.footerbody{
-  background-color: rgb(247, 228, 228);
-  margin-top: 80px;
+.inputsearch {
+  background-color: transparent;
+  width: 90%;
+  color: white;
+  border: 0 ;
 }
-.footericons{
-  color: grey;
+.searchContainer{
+  background-color: transparent;
+  border: 1px solid white;
+  width:30%;
+  border-radius: 20px;
+  padding: 0;
+  margin-left: 450px;
+}
+.footerbody{
+  background-color: rgb(63, 53, 53);
+  margin-top: 80px;
+  padding: 20px;
+}
+.copyright{
+  color:rgb(173, 170, 170);
+}
+.share{
+  margin:10px;
+  color:rgb(173, 170, 170);
 }

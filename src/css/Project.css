@@ -16,6 +16,6 @@ body{
 .li:hover{
     width:20rem;
     height:25rem;
-    background-color:rgba(255, 183, 0, 0.541); 
+    background: rgba(105, 55, 47, 0.637); 
     z-index: 2;
 }

@@ -19,17 +19,32 @@ class NavComponents extends Component {
   render() {
     return (
       <div>        
-        <div className="navbar">
-          <img className="logoimage" src={image} />
-          <h3 className="navhead">CHARITY</h3>
-          <a href="/home">Home</a>
-          <a href="/project">Projects</a>
-          <a href="/about">About</a>
-          <a href="/donate">Donate Options </a>  
-          
-          <a hidden={this.state.visible} href="/admin"><button className="logOut">Admin</button></a>
-          <button className="logOut"  onClick={this.logout}>Log Out</button>
-          
+        <div className="navbar row">
+          <div className="col-sm-1 ">
+            <img className="logoimage" src={image} />
+          </div>
+          <div className="col-sm-2 ">
+            <h3 className="navhead">CHARITY</h3>
+          </div>
+          <div className="col-sm-1">
+            <a href="/home">Home</a>
+          </div>
+          <div className="col-sm-1">
+            <a href="/project">Projects</a>
+          </div>
+          <div className="col-sm-1">
+            <a href="/about">About</a>
+          </div>
+          <div className="col-sm-1">
+            <a href="/donate">Donate</a>  
+          </div>
+          <div className="col-sm-2"></div>
+          <div className="col-sm-1">
+            <a hidden={this.state.visible} href="/admin"><button className="logOut">Admin</button></a>
+          </div>
+          <div className="col-sm-2">
+            <button className="logOut"  onClick={this.logout}>Log Out</button>
+          </div>
         </div>
       </div>
     );

@@ -20,6 +20,7 @@ import VerifyCard from './Components/VerifyCard';
 import LiveNews from './Components/LiveNews';
 import News from './Components/News';
 import Forgot from './Components/Forgot';
+import NewPassword from './Components/NewPassword';
 
 const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   <Route
@@ -30,26 +31,44 @@ const PrivateRoute = ({ component: IncomingComponent, ...rest }) => (
   )}
 />
 );
+const PublicRoute = ({ component: IncomingComponent, ...rest }) => (
+  <Route
+  {...rest}
+  render={props => (  
+    (!sessionStorage.getItem('authentication')) ? (<IncomingComponent {...props} />) : (
+      <Redirect to={{pathname: '/home', state: { from: props.location }, }}/>)
+  )}
+/>
+);
+const SecretRoute = ({ component: IncomingComponent, ...rest }) => (
+  <Route
+  {...rest}
+  render={props => (  
+    (sessionStorage.getItem('role')==='admin') ? (<IncomingComponent {...props} />) : (
+      <Redirect to={{pathname: '/home', state: { from: props.location }, }}/>)
+  )}
+/>
+);
+
 
 function App() {
   return (
     <div className="App">
      <Router> 
         <Switch> 
-          <Route exact path='/' component={Firstpage}></Route>
+          <PublicRoute exact path='/' component={Firstpage}></PublicRoute>
           <Route exact path='/second' component={RegisterPage}></Route>
           <PrivateRoute exact path='/home' component={homeComponents}></PrivateRoute>
           <PrivateRoute exact path='/Project' component={ProjectPage}></PrivateRoute>
           <PrivateRoute exact path='/about' component={About}></PrivateRoute>
           <PrivateRoute exact path='/donate' component={DonatePage}></PrivateRoute>
-          <PrivateRoute exact path='/admin' component={Admin}></PrivateRoute>
+          <SecretRoute exact path='/admin' component={Admin}></SecretRoute>
           <PrivateRoute exact path='/livenews' component={LiveNews}></PrivateRoute>
           <PrivateRoute exact path='/card' component={VerifyCard}></PrivateRoute>
-          <Route exact path='/newpassword' component={News}></Route>
+          <Route exact path='/newpassword' component={NewPassword}></Route>
           <Route exact path='/forgot' component={Forgot}></Route>
-
-       </Switch> 
-       </Router> 
+        </Switch> 
+      </Router> 
        
     </div>
   );

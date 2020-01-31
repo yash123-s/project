@@ -54,7 +54,7 @@ class homeComponents extends Component {
         <div>
           <br></br>
           <h2>LIVE NEWS</h2>
-          <div><LiveNews videoId="5JV2ed58BIs"/></div>
+          <div><LiveNews videoId="U2xybDqZz_U"/></div>
         </div>
         <div><FooterComponents /></div>
       </div>

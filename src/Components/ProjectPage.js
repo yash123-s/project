@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/Project.css';
 import {Card} from 'react-bootstrap';
 import flood from '../images/flood.jpg'
-import physical from '../images/physical.jpg'
+import agri from '../images/agri.jpg'
 import orphan from '../images/orphan.jpg'
 import children from '../images/children.jpg'
 import FooterComponents from '../Components/FooterComponents';
@@ -30,7 +30,7 @@ class ProjectPage extends Component {
                     </p>
                     
                     
-                      <h2>Projects are mentioned below.</h2>
+                      <h2>Projects</h2>
                     <div className="row">
                       <div className=" col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <Card className=" mainheight li" >
@@ -38,9 +38,7 @@ class ProjectPage extends Component {
                             <Card.Body>
                                 <Card.Title>Flood</Card.Title>
                                 <Card.Text>
-                                <div> Donate food/meals,water facility</div>
-                                <div> >Donate bedsheets</div>
-                                <div> >pillows</div>
+                                <div> Donate food/meals,water facility,Donate bedsheets,pillows </div>
                                 <a class="text-uppercase" href="/about">read more</a>
                                 </Card.Text>
                           </Card.Body>
@@ -48,11 +46,11 @@ class ProjectPage extends Component {
                           </div>
                           <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <Card className="mainheight li" >
-                                <Card.Img variant="top" src={physical}/>
+                                <Card.Img variant="top" src={agri}/>
                                 <Card.Body>
-                                    <Card.Title>Physically challenged/mentally retarded</Card.Title>
+                                    <Card.Title>Agriculture Purpose</Card.Title>
                                     <Card.Text>
-                                        Home schooling,Care taking, feeding
+                                       <div>Farming , Harvesting , cultivating and Ploughing</div>
                                     <a class="text-uppercase" href="/about">read more</a>
                                     </Card.Text>
                                 </Card.Body>
@@ -61,7 +59,6 @@ class ProjectPage extends Component {
                       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                         <Card className="mainheight li" >
                             <Card.Img  variant="top" src={orphan} onmouseover={orphan} />
-                            <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
                             <Card.Body>
                                 <Card.Title>Old Age Orphans</Card.Title>
                                 <Card.Text>

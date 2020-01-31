@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import NavComponents from '../Components/NavComponents';
-import browserHistory from '../Utlis/browserHistory';
-import '../css/donate.css';
-import axios from 'axios'; 
+import FooterComponents from '../Components/FooterComponents';
+import '../css/donate.css'; 
 import card1 from '../images/paypal.png';
 import card2 from '../images/mastercard.png';
 import card3 from '../images/Gold_Card.png';
@@ -55,15 +54,11 @@ class DonatePage extends Component {
     }
     if(t>2) {
       this.props.donateHandle(payload);
-      // browserHistory.push('/card')
-      // alert("Donated successfully, Thank you keep donating")
     } 
   }
-    
     handleChange=(e)=>{
     this.setState({[e.target.name]:e.target.value});
     }
-    
   render() {
     return (
       <div>
@@ -71,9 +66,9 @@ class DonatePage extends Component {
         <div className="donatebg">
           <div className="donatebgcolor">
        
-          <h1>Donate to THE CHARITY</h1>
-          <h3>Visit to: Vinayakanagar 570001,Mysore </h3>
-          <h4>Contact: 9036167656</h4>
+          <h2>Donate to THE CHARITY</h2>
+          <p>Visit to: Vinayakanagar 570001,Mysore </p>
+          <p>Contact: 9036167656</p>
        
         <div className="row">
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -92,7 +87,6 @@ class DonatePage extends Component {
           <p>
               2.To Give Online, fill the form and press <b>DONATE</b>.
           </p>
-
           <div className="cards">
             We accept:
             <img src={card1} className="cardimage"/>
@@ -105,17 +99,17 @@ class DonatePage extends Component {
           <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <form>
               <select name='project' onChange={this.handleChange} className="donateoptions">
-                  <option value="Children Education" >Children Education</option>
+                  <option value="Children Education">Children Education</option>
                   <option value="Flood effected region">Flood effected region</option>
                   <option value="Old age orphanage">Old age orphanage</option>
-                  <option value="Orphan's shelter">Orphan's shelter</option>
+                  <option value="Orphan's shelter">Agriculture purpose</option>
               </select>
             </form>
-            <div className="credentials">Note: *Enter the credentials to proceed the payment</div>
+            <div className="credentials">*Enter the credentials to proceed the payment</div>
           <div>
             <form onSubmit={this.handleSubmit} className='signup_form'> 
              
-            <div className="register">
+            <div >
               <input type='text' name='firstname' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter First Name'></input>
               <p className='red'>{this.state.fnameError}</p>
       
@@ -137,21 +131,17 @@ class DonatePage extends Component {
               <button type="button" onClick={this.handleSubmit} class="donatebtn btn btn-success signup_btn">Donate</button>
               <button class="donatebtn btn btn-success signup_btn" color="danger" onClick={this.toggle}>Cancel</button>
             </div>
-            <div>
-             
-            </div>
-            </form>
+          </form>
           </div>
-          </div>
-          
-          </div>
-          </div>
-      </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <FooterComponents />
       </div>
   );
 }
 }
-
 const mapStateToProps=(state)=>{
   const {firstname,lastname,email,project,amounttype,amount,message}=state.DonateReducer
   return {firstname,lastname,email,project,amounttype,amount,message}
